@@ -4,19 +4,19 @@
  * Adjust variant, copy, and reasons to match your product.
  */
 
-// ─── Variant System ────────────────────────────────────────────────────────────
+// â”€â”€â”€ Variant System â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // 'professional' | 'emotional' | 'minimal'
 export const VARIANT = 'professional';
 
-// ─── Product Branding ──────────────────────────────────────────────────────────
+// â”€â”€â”€ Product Branding â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const PRODUCT = {
   name: 'Acme',
-  logoEmoji: '⚡',
+  logoEmoji: 'âš¡',
   supportEmail: 'support@acme.com',
   homepageUrl: 'https://acme.com',
 };
 
-// ─── Feedback Reasons ──────────────────────────────────────────────────────────
+// â”€â”€â”€ Feedback Reasons â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const FEEDBACK_REASONS = [
   {
     id: 'missing_features',
@@ -31,7 +31,7 @@ export const FEEDBACK_REASONS = [
   {
     id: 'too_expensive',
     label: "It's too expensive for my budget",
-    description: 'The pricing doesn\'t match the value I'm getting',
+    description: 'The pricing doesn\'t match the value I\'m getting',
   },
   {
     id: 'found_alternative',
@@ -51,21 +51,21 @@ export const FEEDBACK_REASONS = [
   },
 ];
 
-// ─── Copy Variants ─────────────────────────────────────────────────────────────
+// â”€â”€â”€ Copy Variants â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const COPY = {
   professional: {
     eyebrow: 'Account Cancelled',
     headline: 'Before you go,\nhelp us improve.',
     subheadline:
-      'Your account has been deactivated. We\'d genuinely appreciate a moment of your time — this goes straight to our product team.',
+      'Your account has been deactivated. We\'d genuinely appreciate a moment of your time â€” this goes straight to our product team.',
     sectionLabel: 'What was the primary reason for leaving?',
     submitLabel: 'Submit Feedback',
-    submitLoadingLabel: 'Sending…',
+    submitLoadingLabel: 'Sendingâ€¦',
     otherPlaceholder: 'Tell us what happened. We read every response (seriously).',
-    microcopy: 'We promise we\'ll take this seriously 🙂',
+    microcopy: 'We promise we\'ll take this seriously ðŸ™‚',
     successHeadline: 'Thank you, truly.',
     successBody:
-      'Your feedback has been received and will be reviewed by our product team. We\'re sorry to see you go — and we hope to see you again someday.',
+      'Your feedback has been received and will be reviewed by our product team. We\'re sorry to see you go â€” and we hope to see you again someday.',
     successCta: 'Visit our homepage',
   },
   emotional: {
@@ -75,7 +75,7 @@ export const COPY = {
       'It means a lot that you gave us a shot. If there\'s something we could have done better, we\'d love to know.',
     sectionLabel: 'What was the main reason you decided to leave?',
     submitLabel: 'Send My Feedback',
-    submitLoadingLabel: 'Sending…',
+    submitLoadingLabel: 'Sendingâ€¦',
     otherPlaceholder: 'Your words matter to us. Share whatever\'s on your mind.',
     microcopy: 'Every response is read by a real human on our team.',
     successHeadline: 'You made our day a little better.',
@@ -89,7 +89,7 @@ export const COPY = {
     subheadline: 'Optional. One question. Takes 20 seconds.',
     sectionLabel: 'Why did you uninstall?',
     submitLabel: 'Submit',
-    submitLoadingLabel: '…',
+    submitLoadingLabel: 'â€¦',
     otherPlaceholder: 'Type here.',
     microcopy: '',
     successHeadline: 'Got it. Thanks.',
@@ -98,7 +98,7 @@ export const COPY = {
   },
 };
 
-// ─── API Endpoints ─────────────────────────────────────────────────────────────
+// â”€â”€â”€ API Endpoints â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const API = {
   saveEmail: '/api/save-email',
   updateFeedback: '/api/update-feedback',

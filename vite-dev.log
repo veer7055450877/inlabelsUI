@@ -8,3 +8,9 @@ Forced re-optimization of dependencies
 
   [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m4173[22m/[39m
 [2m7:13:24 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mindex.html[22m
+[2m7:27:09 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mindex.html[22m
+7:27:15 pm [vite-plugin-svelte] svelte config changed: restarting vite server. - file: H:\inlabels_gitab\uninstall-feedback\svelte.config.js
+7:27:15 pm [vite-plugin-svelte] svelte config changed: restarting vite server. - file: H:\inlabels_gitab\uninstall-feedback\svelte.config.js
+[2m7:28:22 pm[22m [36m[1m[vite][22m[39m [32mvite.config.js changed, restarting server...[39m
+Forced re-optimization of dependencies
+[2m7:28:22 pm[22m [36m[1m[vite][22m[39m server restarted.

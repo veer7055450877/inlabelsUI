@@ -4,9 +4,9 @@
    * Accessible radio group with animated selection states.
    *
    * Props:
-   *   options  — Array<{ id: string, label: string, description?: string, isOther?: boolean }>
-   *   value    — currently selected option id (bindable)
-   *   name     — input group name
+   *   options  â€” Array<{ id: string, label: string, description?: string, isOther?: boolean }>
+   *   value    â€” currently selected option id (bindable)
+   *   name     â€” input group name
    */
   import { tick } from 'svelte';
 
@@ -46,7 +46,7 @@
 
       <!-- Custom radio dot -->
       <span class="radio-dot" aria-hidden="true">
-        <span class="radio-dot__inner" class:radio-dot__inner--visible={isSelected} />
+        <span class="radio-dot__inner" class:radio-dot__inner--visible={isSelected}></span>
       </span>
 
       <!-- Label text -->
@@ -77,7 +77,7 @@
     gap: var(--space-3);
   }
 
-  /* ── Option Row ── */
+  /* â”€â”€ Option Row â”€â”€ */
   .radio-option {
     display: flex;
     align-items: center;
@@ -124,7 +124,7 @@
     opacity: 0.03;
   }
 
-  /* ── Radio Dot ── */
+  /* â”€â”€ Radio Dot â”€â”€ */
   .radio-dot {
     flex-shrink: 0;
     width: 20px;
@@ -158,7 +158,7 @@
     transform: scale(1);
   }
 
-  /* ── Label ── */
+  /* â”€â”€ Label â”€â”€ */
   .radio-label {
     flex: 1;
     display: flex;
@@ -180,7 +180,7 @@
     line-height: var(--leading-snug);
   }
 
-  /* ── Checkmark ── */
+  /* â”€â”€ Checkmark â”€â”€ */
   .radio-check {
     flex-shrink: 0;
     color: var(--color-accent);

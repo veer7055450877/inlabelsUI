@@ -6,9 +6,9 @@
    * URL: /uninstall?email=user@example.com
    *
    * Flow:
-   *  1. Mount  → read ?email from URL → POST /api/save-email
-   *  2. Show   → feedback form (radio reasons + optional textarea)
-   *  3. Submit → POST /api/update-feedback → show success state
+   *  1. Mount  Ã¢â€ â€™ read ?email from URL Ã¢â€ â€™ POST /api/save-email
+   *  2. Show   Ã¢â€ â€™ feedback form (radio reasons + optional textarea)
+   *  3. Submit Ã¢â€ â€™ POST /api/update-feedback Ã¢â€ â€™ show success state
    */
 
   import { onMount } from 'svelte';
@@ -28,11 +28,11 @@
     API,
   } from '$lib/config.js';
 
-  // ─── Derived Config ─────────────────────────────────────────────────────────
+  // Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Derived Config Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
   const copy    = COPY[VARIANT] ?? COPY.professional;
   const reasons = FEEDBACK_REASONS;
 
-  // ─── State ──────────────────────────────────────────────────────────────────
+  // Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ State Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 
   /** Email from URL param */
   let email = '';
@@ -55,13 +55,13 @@
   /** Error message */
   let errorMessage = '';
 
-  // ─── Computed ───────────────────────────────────────────────────────────────
+  // Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Computed Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 
   $: selectedReasonObj  = reasons.find(r => r.id === selectedReason);
   $: isOtherSelected    = selectedReasonObj?.isOther === true;
   $: isSubmitDisabled   = !selectedReason || (isOtherSelected && otherText.trim().length < 2);
 
-  // ─── Lifecycle ──────────────────────────────────────────────────────────────
+  // Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Lifecycle Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 
   onMount(async () => {
     // Read email from query param
@@ -74,7 +74,7 @@
     phase = 'form';
   });
 
-  // ─── API Calls ──────────────────────────────────────────────────────────────
+  // Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ API Calls Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 
   /**
    * POST /api/save-email
@@ -92,7 +92,7 @@
         }),
       });
     } catch (err) {
-      // Non-blocking — we still show the form even if logging fails
+      // Non-blocking Ã¢â‚¬â€ we still show the form even if logging fails
       console.warn('[uninstall] Failed to log event:', err);
     }
   }
@@ -136,7 +136,7 @@
     }
   }
 
-  // ─── Helpers ────────────────────────────────────────────────────────────────
+  // Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Helpers Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 
   function handleKeydown(e) {
     if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
@@ -146,32 +146,32 @@
 </script>
 
 <svelte:head>
-  <title>Before you go — {PRODUCT.name}</title>
+  <title>Before you go Ã¢â‚¬â€ {PRODUCT.name}</title>
 </svelte:head>
 
-<!-- ════════════════════════════════════════════════════════════════════════════
+<!-- Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
      Page Shell
-════════════════════════════════════════════════════════════════════════════ -->
+Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â -->
 <div class="page">
   <!-- Background decoration -->
-  <div class="page__bg-orb page__bg-orb--1" aria-hidden="true" />
-  <div class="page__bg-orb page__bg-orb--2" aria-hidden="true" />
+  <div class="page__bg-orb page__bg-orb--1" aria-hidden="true"></div>
+  <div class="page__bg-orb page__bg-orb--2" aria-hidden="true"></div>
 
   <main class="page__main">
 
-    <!-- ── Loading Skeleton ── -->
+    <!-- Ã¢â€â‚¬Ã¢â€â‚¬ Loading Skeleton Ã¢â€â‚¬Ã¢â€â‚¬ -->
     {#if phase === 'loading'}
       <div class="skeleton-wrap" in:fade={{ duration: 200 }}>
-        <div class="skeleton skeleton--title" />
-        <div class="skeleton skeleton--text" />
-        <div class="skeleton skeleton--text skeleton--short" />
+        <div class="skeleton skeleton--title"></div>
+        <div class="skeleton skeleton--text"></div>
+        <div class="skeleton skeleton--text skeleton--short"></div>
         {#each Array(4) as _}
-          <div class="skeleton skeleton--option" />
+          <div class="skeleton skeleton--option"></div>
         {/each}
-        <div class="skeleton skeleton--btn" />
+        <div class="skeleton skeleton--btn"></div>
       </div>
 
-    <!-- ── Feedback Form ── -->
+    <!-- Ã¢â€â‚¬Ã¢â€â‚¬ Feedback Form Ã¢â€â‚¬Ã¢â€â‚¬ -->
     {:else if phase === 'form'}
       <div
         class="card-wrap"
@@ -211,7 +211,7 @@
           </header>
 
           <!-- Divider -->
-          <div class="divider" role="separator" />
+          <div class="divider" role="separator"></div>
 
           <!-- Form Body -->
           <form
@@ -249,7 +249,7 @@
                   rows="4"
                   maxlength="500"
                   on:keydown={handleKeydown}
-                />
+                ></textarea>
                 <div class="textarea-footer">
                   <span class="textarea-count">{otherText.length}/500</span>
                   {#if !isOtherSelected || otherText.trim().length < 2}
@@ -291,14 +291,14 @@
 
               <p class="form-footer-note">
                 Having second thoughts?
-                <a href={PRODUCT.homepageUrl} class="link">Explore what's new →</a>
+                <a href={PRODUCT.homepageUrl} class="link">Explore what's new Ã¢â€ â€™</a>
               </p>
             </div>
           </form>
         </Card>
       </div>
 
-    <!-- ── Success State ── -->
+    <!-- Ã¢â€â‚¬Ã¢â€â‚¬ Success State Ã¢â€â‚¬Ã¢â€â‚¬ -->
     {:else if phase === 'success'}
       <div
         class="card-wrap"
@@ -308,7 +308,7 @@
           <div class="success-state">
             <!-- Animated checkmark -->
             <div class="success-icon" in:scale={{ start: 0.5, duration: 500, easing: backOut, delay: 100 }}>
-              <div class="success-icon__ring" />
+              <div class="success-icon__ring"></div>
               <svg class="success-icon__check" width="32" height="32" viewBox="0 0 32 32" fill="none">
                 <path
                   class="check-path"
@@ -350,7 +350,7 @@
             <p class="success-support">
               Changed your mind?
               <a href="mailto:{PRODUCT.supportEmail}" class="link">Contact support</a>
-              — we may be able to restore your account.
+              Ã¢â‚¬â€ we may be able to restore your account.
             </p>
           </div>
         </Card>
@@ -361,16 +361,16 @@
 
   <!-- Footer -->
   <footer class="page-footer">
-    <p>© {new Date().getFullYear()} {PRODUCT.name}. All rights reserved.</p>
+    <p>Ã‚Â© {new Date().getFullYear()} {PRODUCT.name}. All rights reserved.</p>
     <a href="mailto:{PRODUCT.supportEmail}" class="link">Contact support</a>
   </footer>
 </div>
 
-<!-- ════════════════════════════════════════════════════════════════════════════
+<!-- Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
      Styles
-════════════════════════════════════════════════════════════════════════════ -->
+Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â -->
 <style>
-  /* ── Page Layout ── */
+  /* Ã¢â€â‚¬Ã¢â€â‚¬ Page Layout Ã¢â€â‚¬Ã¢â€â‚¬ */
   .page {
     min-height: 100vh;
     display: flex;
@@ -382,7 +382,7 @@
     overflow: hidden;
   }
 
-  /* ── Background Orbs ── */
+  /* Ã¢â€â‚¬Ã¢â€â‚¬ Background Orbs Ã¢â€â‚¬Ã¢â€â‚¬ */
   .page__bg-orb {
     position: fixed;
     border-radius: var(--radius-full);
@@ -407,7 +407,7 @@
     left: -100px;
   }
 
-  /* ── Main Container ── */
+  /* Ã¢â€â‚¬Ã¢â€â‚¬ Main Container Ã¢â€â‚¬Ã¢â€â‚¬ */
   .page__main {
     width: 100%;
     max-width: 560px;
@@ -419,7 +419,7 @@
     width: 100%;
   }
 
-  /* ── Form Header ── */
+  /* Ã¢â€â‚¬Ã¢â€â‚¬ Form Header Ã¢â€â‚¬Ã¢â€â‚¬ */
   .form-header {
     margin-bottom: var(--space-6);
   }
@@ -486,14 +486,14 @@
     max-width: 44ch;
   }
 
-  /* ── Divider ── */
+  /* Ã¢â€â‚¬Ã¢â€â‚¬ Divider Ã¢â€â‚¬Ã¢â€â‚¬ */
   .divider {
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--color-border), transparent);
     margin-bottom: var(--space-6);
   }
 
-  /* ── Form ── */
+  /* Ã¢â€â‚¬Ã¢â€â‚¬ Form Ã¢â€â‚¬Ã¢â€â‚¬ */
   .feedback-form {
     display: flex;
     flex-direction: column;
@@ -515,7 +515,7 @@
     margin-bottom: var(--space-4);
   }
 
-  /* ── Textarea ── */
+  /* Ã¢â€â‚¬Ã¢â€â‚¬ Textarea Ã¢â€â‚¬Ã¢â€â‚¬ */
   .textarea-wrap {
     display: flex;
     flex-direction: column;
@@ -579,7 +579,7 @@
     color: var(--color-text-light);
   }
 
-  /* ── Microcopy ── */
+  /* Ã¢â€â‚¬Ã¢â€â‚¬ Microcopy Ã¢â€â‚¬Ã¢â€â‚¬ */
   .microcopy {
     font-size: var(--text-sm);
     color: var(--color-text-muted);
@@ -587,7 +587,7 @@
     font-style: italic;
   }
 
-  /* ── Error ── */
+  /* Ã¢â€â‚¬Ã¢â€â‚¬ Error Ã¢â€â‚¬Ã¢â€â‚¬ */
   .error-msg {
     display: flex;
     align-items: center;
@@ -601,7 +601,7 @@
     font-weight: var(--weight-medium);
   }
 
-  /* ── Actions ── */
+  /* Ã¢â€â‚¬Ã¢â€â‚¬ Actions Ã¢â€â‚¬Ã¢â€â‚¬ */
   .form-actions {
     display: flex;
     flex-direction: column;
@@ -615,7 +615,7 @@
     text-align: center;
   }
 
-  /* ── Link ── */
+  /* Ã¢â€â‚¬Ã¢â€â‚¬ Link Ã¢â€â‚¬Ã¢â€â‚¬ */
   .link {
     color: var(--color-accent);
     text-decoration: none;
@@ -628,7 +628,7 @@
     text-decoration: underline;
   }
 
-  /* ── Success State ── */
+  /* Ã¢â€â‚¬Ã¢â€â‚¬ Success State Ã¢â€â‚¬Ã¢â€â‚¬ */
   .success-state {
     display: flex;
     flex-direction: column;
@@ -638,7 +638,7 @@
     padding: var(--space-4) 0;
   }
 
-  /* ── Success Icon ── */
+  /* Ã¢â€â‚¬Ã¢â€â‚¬ Success Icon Ã¢â€â‚¬Ã¢â€â‚¬ */
   .success-icon {
     position: relative;
     width: 80px;
@@ -677,7 +677,7 @@
     50%       { box-shadow: var(--shadow-primary-hover), 0 0 0 10px rgba(99, 102, 241, 0); }
   }
 
-  /* ── Success Copy ── */
+  /* Ã¢â€â‚¬Ã¢â€â‚¬ Success Copy Ã¢â€â‚¬Ã¢â€â‚¬ */
   .success-copy {
     display: flex;
     flex-direction: column;
@@ -714,7 +714,7 @@
     color: var(--color-text-light);
   }
 
-  /* ── Skeleton Loading ── */
+  /* Ã¢â€â‚¬Ã¢â€â‚¬ Skeleton Loading Ã¢â€â‚¬Ã¢â€â‚¬ */
   .skeleton-wrap {
     display: flex;
     flex-direction: column;
@@ -748,7 +748,7 @@
     100% { background-position: -200% center; }
   }
 
-  /* ── Footer ── */
+  /* Ã¢â€â‚¬Ã¢â€â‚¬ Footer Ã¢â€â‚¬Ã¢â€â‚¬ */
   .page-footer {
     margin-top: var(--space-8);
     display: flex;
@@ -760,7 +760,7 @@
     z-index: 1;
   }
 
-  /* ── Responsive ── */
+  /* Ã¢â€â‚¬Ã¢â€â‚¬ Responsive Ã¢â€â‚¬Ã¢â€â‚¬ */
   @media (max-width: 600px) {
     .form-header__headline {
       font-size: var(--text-3xl);
